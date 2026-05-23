@@ -70,115 +70,118 @@ export interface GameJam {
   reflection: string; // 学び・振り返り.
 }
 
-export type CertStatus = '取得済み' | '受験予定'| '取得予定' | '学習中'
+export type CertStatus = "取得済み" | "受験予定" | "取得予定" | "学習中";
 
-export interface Certification{
-    name: string // 資格名.
-    date: string // 日時.
-    category: string // カテゴリ.
-    score: string | null // スコア.
-    status: CertStatus // ステータス.
+export interface Certification {
+  name: string; // 資格名.
+  date: string; // 日時.
+  category: string; // カテゴリ.
+  score: string | null; // スコア.
+  status: CertStatus; // ステータス.
 }
 
-export interface TimelineItem{
-    year: string // 年.
-    event: string // イベント.
+export interface TimelineItem {
+  year: string; // 年.
+  event: string; // イベント.
 }
 
+export const profile: Profile = {
+  name: "田村航海",
+  nameEn: "Kazumi Tamura",
+  role: "Game Creator",
+  school: "京都デザイン＆テクノロジー専門学校",
+  department: "スーパーゲームクリエイター専攻",
+  graduationYear: "2027年3月卒業見込み",
+  bio: "例: 「触れた瞬間の手応え」にこだわるゲームプログラマーです。個人制作の2Dアクションでは、操作入力からアニメーション再生までのフレーム単位の遅延をProfilerで計測・改善し、「動かしていて気持ちいい」と言われる操作感を実現しました。課題にぶつかったときも原因を切り分けて一つずつ潰す姿勢が強みです。",
+  motto: "神は細部に宿る",
+  avatar: "/images/avatar.png", // publicフォルダからの相対パス.
+  links: {
+    github: "https://github.com/kcs-tamura",
+    twitter: null,
+    email: "info@example.com",
+  },
+};
 
-export const profile: Profile={
-    name: '田村航海',
-    nameEn: 'Kazumi Tamura',
-    role: 'Game Creator',
-    school: '京都デザイン＆テクノロジー専門学校',
-    department: 'スーパーゲームクリエイター専攻',
-    graduationYear: '2027年3月卒業見込み',
-    bio: '例: 「触れた瞬間の手応え」にこだわるゲームプログラマーです。個人制作の2Dアクションでは、操作入力からアニメーション再生までのフレーム単位の遅延をProfilerで計測・改善し、「動かしていて気持ちいい」と言われる操作感を実現しました。課題にぶつかったときも原因を切り分けて一つずつ潰す姿勢が強みです。',
-    motto: '神は細部に宿る',
-    avatar: '/images/avatar.png', // publicフォルダからの相対パス.
-    links:{
-        github: 'https://github.com/kcs-tamura',
-        twitter: null,
-        email: 'info@example.com',
-    },
-}
+export const skils: Skill[] = [
+  {
+    name: "Unity",
+    version: "",
+    level: 100,
+    category: "game",
+    capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
+    note: "hoge",
+  },
+];
 
-export const skils: Skill[] =[
-    {
-       name: 'Unity',
-        version: '',
-        level: 100,
-        category: 'game',
-        capabilities: ['3D/2Dゲーム開発', 'Physics演算', 'ProceduralGeneration'],
-        note: 'hoge'
-    },
-]
-
-export const works: Work[] =[
-    {
-        id: 1,
-        title: '迷宮脱出ゲーム',
-        genre: '3Dパズルアクション',
-        category: 'game',
-        thumbnail: '/images/meikyu.png',
-        screenshots: [],
-        description: "",
-        tags: [],
-        platform: [],
-        period: "",
-        team: "",
-        role: "",
-        github: "",
-        link: null,
-        venues: [],
-        techPoints: null,
-        designNotes: null,
-        implementationTheme: null,
-        trpibleshooting: null,
-        performance: null
-    }
-]
+export const works: Work[] = [
+  {
+    id: 1,
+    title: "迷宮脱出ゲーム",
+    genre: "3Dパズルアクション",
+    category: "game",
+    thumbnail: "/images/meikyu.png",
+    screenshots: [],
+    description: "",
+    tags: [],
+    platform: [],
+    period: "",
+    team: "",
+    role: "",
+    github: "",
+    link: null,
+    venues: [],
+    techPoints: null,
+    designNotes: null,
+    implementationTheme: null,
+    trpibleshooting: null,
+    performance: null,
+  },
+];
 
 export const gameJams: GameJam[] = [
-    {
-        name: "",
-        date: "",
-        theme: "",
-        description: "",
-        platform: "",
-        role: "",
-        team: "",
-        result: null,
-        url: null,
-        reflection: ""
-    }
-]
+  {
+    name: "",
+    date: "",
+    theme: "",
+    description: "",
+    platform: "",
+    role: "",
+    team: "",
+    result: null,
+    url: null,
+    reflection: "",
+  },
+];
 
-export const certifications: Certification[] =[
-    {
-        name: "",
-        date: "",
-        category: "",
-        score: null,
-        status: "取得済み"
-    }
-]
+export const certifications: Certification[] = [
+  {
+    name: "",
+    date: "",
+    category: "",
+    score: null,
+    status: "取得済み",
+  },
+];
 
-export const timeline: TimelineItem[] =[
-    {
-        year: "2021年3月",
-        event: "東京デザインテクノロジーセンター専門学校 卒業"
-    },{
-        year: "2021年4月",
-        event: "株式会社ファンタジスタ 入社"
-    },{
-        year: "2022年9月",
-        event: "開発に携わった太鼓の達人が発売"
-    },{
-        year: "2024年9月",
-        event: "株式会社ファンタジスタ 退社"
-    },{
-        year: "2024年10月",
-        event: "株式会社オルトプラス 入社"
-    },
-]
+export const timeline: TimelineItem[] = [
+  {
+    year: "2021年3月",
+    event: "東京デザインテクノロジーセンター専門学校 卒業",
+  },
+  {
+    year: "2021年4月",
+    event: "株式会社ファンタジスタ 入社",
+  },
+  {
+    year: "2022年9月",
+    event: "開発に携わった太鼓の達人が発売",
+  },
+  {
+    year: "2024年9月",
+    event: "株式会社ファンタジスタ 退社",
+  },
+  {
+    year: "2024年10月",
+    event: "株式会社オルトプラス 入社",
+  },
+];

@@ -111,6 +111,7 @@ export const skils: Skill[] = [
     capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
     note: "hoge",
   },
+  // 他にもあるはずなので、配列でたくさん書いてね.
 ];
 
 export const works: Work[] = [
@@ -121,43 +122,48 @@ export const works: Work[] = [
     category: "game",
     thumbnail: "/images/meikyu.png",
     screenshots: [],
-    description: "",
-    tags: [],
-    platform: [],
-    period: "",
-    team: "",
-    role: "",
-    github: "",
+    description: "ゲームの詳細情報",
+    tags: ['タグ'],
+    platform: ['Windows', 'iOS', 'Android', 'Nintendo Switch'],
+    period: "2025年10月~2026年1月(3か月)",
+    team: "5人 (PL: 2人, PG: 1人, DES: 1人, UI/UX: 1人)",
+    role: "インゲーム全般, 通信処理, アウトゲームコンポーネント基盤",
+    github: "https://github.com/facebook/react",
     link: null,
-    venues: [],
-    techPoints: null,
-    designNotes: null,
-    implementationTheme: null,
-    trpibleshooting: null,
-    performance: null,
+    venues: [
+        {
+            name: "Tokyo Game show 2027",
+            date: "2027/09/21~2027/09/25"
+        }
+    ],
+    techPoints: '技術ポイントをめっちゃ書く',
+    designNotes: '設計ポイントをめっちゃ書く',
+    implementationTheme: '実装解説をめっちゃ書く',
+    trpibleshooting: '詰まった問題と解決策をめっちゃ書く',
+    performance: 'パフォーマンス改善の工夫',
   },
 ];
 
 export const gameJams: GameJam[] = [
   {
-    name: "",
-    date: "",
-    theme: "",
-    description: "",
-    platform: "",
-    role: "",
-    team: "",
+    name: "BotSummit",
+    date: "2026/--/--",
+    theme: "[bubble]→泡を使った物理パズルを制作",
+    description: "作品の説明",
+    platform: "Windows",
+    role: "プログラム全般",
+    team: "5人 (PL: 2人, PG: 1人, DES: 1人, UI/UX: 1人)",
     result: null,
     url: null,
-    reflection: "",
+    reflection: "学び・振り返り",
   },
 ];
 
 export const certifications: Certification[] = [
   {
-    name: "",
-    date: "",
-    category: "",
+    name: "第二種電気工事士",
+    date: "2027/--/--",
+    category: "国家資格",
     score: null,
     status: "取得済み",
   },

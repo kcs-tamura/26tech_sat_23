@@ -1,0 +1,252 @@
+/* ===========================
+   作品詳細ページ（WorkDetail）
+   =========================== */
+
+/* ページ全体の余白（ヘッダー分の上余白含む） */
+.wd-page {
+  padding: 120px 0 96px;
+  min-height: 100vh;
+}
+
+/* 「← 戻る」リンク */
+.wd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+  transition: color var(--transition);
+}
+
+.wd-back:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* サムネイルと基本情報の2カラムレイアウト */
+.wd-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+/* サムネイル表示エリア（16:9比率） */
+.wd-hero-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  overflow: hidden;
+}
+
+.wd-hero-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 作品タイトル */
+.wd-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 8px 0 16px;
+}
+
+/* 作品の説明文 */
+.wd-description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* GitHubリンク等のボタン群 */
+.wd-hero-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* スクリーンショットのグリッド */
+.wd-screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* 各スクリーンショット画像 */
+.wd-screenshot-img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+/* 基本情報テーブル（期間・役割などを2カラムで表示） */
+.wd-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+/* 各メタ情報セル */
+.wd-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+/* メタ情報のラベル */
+.wd-meta-label {
+  font-size: 0.75rem;
+  font-family: var(--font-en);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* メタ情報の値 */
+.wd-meta-value {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* 出展先リスト（メタ情報の下に区切り線で追加） */
+.wd-venues {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* 「出展先」ラベル */
+.wd-venues-label {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.wd-venues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 個々の行は padding で間隔を作るので gap は小さめに */
+}
+
+/* 各出展先の行（薄背景＋パディングで独立したアイテムに見せる） */
+.wd-venue-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  background: var(--color-surface-2);
+  border-radius: 8px;
+  flex-wrap: wrap; /* 狭幅では日付を次行へ送る */
+}
+
+.wd-venue-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* 出展先名（残り幅を埋める。狭幅では単語単位で改行） */
+.wd-venue-name {
+  color: var(--color-text);
+  font-weight: 500;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: keep-all; /* 日本語の不自然な文字単位改行を防ぐ */
+  overflow-wrap: anywhere; /* それでも収まらないときだけ強制折り返し */
+}
+
+/* 出展日（右寄せ・改行しない） */
+.wd-venue-date {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  margin-left: auto;
+  white-space: nowrap; /* 「2025年9月」が「2025年9」/「月」に割れるのを防ぐ */
+  flex-shrink: 0;
+}
+
+/* 技術詳細セクションの2カラムグリッド */
+.wd-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* 技術詳細の各セクションカード */
+.wd-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+/* .container 直下の Section（基本情報・スクリーンショットなど）にだけ下マージンを付ける。
+   .wd-tech-grid 内の Section は grid の gap で間隔が付くので除外 */
+.wd-page .container > .wd-section {
+  margin-bottom: 40px;
+}
+
+/* セクション内の小見出し */
+.wd-section-title {
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.wd-section-body {}
+
+/* セクション内の本文テキスト */
+.wd-text {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ゲームジャムのお題（左ボーダー付きボックス） */
+.wd-theme {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 12px 16px;
+  background: rgba(124, 106, 247, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-accent);
+}
+
+/* タブレット以下：作品詳細を1カラムに変更 */
+@media (max-width: 768px) {
+  .wd-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wd-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wd-tech-grid {
+    grid-template-columns: 1fr;
+  }
+}

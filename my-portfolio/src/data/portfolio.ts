@@ -92,7 +92,7 @@ export const profile: Profile = {
   school: "京都デザイン＆テクノロジー専門学校",
   department: "スーパーゲームクリエイター専攻",
   graduationYear: "2027年3月卒業見込み",
-  bio: "例: 「触れた瞬間の手応え」にこだわるゲームプログラマーです。個人制作の2Dアクションでは、操作入力からアニメーション再生までのフレーム単位の遅延をProfilerで計測・改善し、「動かしていて気持ちいい」と言われる操作感を実現しました。課題にぶつかったときも原因を切り分けて一つずつ潰す姿勢が強みです。",
+  bio: "自己紹介めっちゃ添削したやつ書いてねー",
   motto: "神は細部に宿る",
   avatar: "/images/avatar.png", // publicフォルダからの相対パス.
   links: {
@@ -102,9 +102,37 @@ export const profile: Profile = {
   },
 };
 
-export const skils: Skill[] = [
+export const skills: Skill[] = [
   {
     name: "Unity",
+    version: "",
+    level: 20,
+    category: "game",
+    capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
+    note: "hoge",
+  },  {
+    name: "Unity2",
+    version: "",
+    level: 40,
+    category: "hoge",
+    capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
+    note: "hoge",
+  },  {
+    name: "Unity3",
+    version: "",
+    level: 60,
+    category: "hogehoge",
+    capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
+    note: "hoge",
+  },  {
+    name: "Unity4",
+    version: "",
+    level: 80,
+    category: "game",
+    capabilities: ["3D/2Dゲーム開発", "Physics演算", "ProceduralGeneration"],
+    note: "hoge",
+  },{
+    name: "Unity5",
     version: "",
     level: 100,
     category: "game",
@@ -130,6 +158,32 @@ export const works: Work[] = [
     role: "インゲーム全般, 通信処理, アウトゲームコンポーネント基盤",
     github: "https://github.com/facebook/react",
     link: null,
+    venues: [
+        {
+            name: "Tokyo Game show 2027",
+            date: "2027/09/21~2027/09/25"
+        }
+    ],
+    techPoints: '技術ポイントをめっちゃ書く',
+    designNotes: '設計ポイントをめっちゃ書く',
+    implementationTheme: '実装解説をめっちゃ書く',
+    trpibleshooting: '詰まった問題と解決策をめっちゃ書く',
+    performance: 'パフォーマンス改善の工夫',
+  },  {
+    id: 2,
+    title: "迷宮脱出ゲーム2",
+    genre: "3Dパズルアクション",
+    category: "game",
+    thumbnail: "/images/meikyu.png",
+    screenshots: [],
+    description: "ゲームの詳細情報",
+    tags: ['タグ'],
+    platform: ['Windows', 'iOS', 'Android', 'Nintendo Switch'],
+    period: "2025年10月~2026年1月(3か月)",
+    team: "5人 (PL: 2人, PG: 1人, DES: 1人, UI/UX: 1人)",
+    role: "インゲーム全般, 通信処理, アウトゲームコンポーネント基盤",
+    github: "https://github.com/facebook/react",
+    link: "https://kyoto-tech.ac.jp/",
     venues: [
         {
             name: "Tokyo Game show 2027",

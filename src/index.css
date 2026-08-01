@@ -1,0 +1,24 @@
+/* ===========================
+   styles/ 配下のセクション別CSSを順に読み込む
+   1. 基礎（リセット・CSS変数・body・リンク・画像）
+   2. ユーティリティ（container・section・btn・tag）
+   3. コンポーネント別スタイル（記述順 = 上から表示順）
+   4. レスポンシブ共通（最後に置いてオーバーライド）
+   =========================== */
+
+@import './styles/base.css';
+@import './styles/utilities.css';
+
+@import './styles/header.css';
+@import './styles/hero.css';
+@import './styles/about.css';
+@import './styles/skills.css';
+@import './styles/works.css';
+@import './styles/gamejams.css';
+@import './styles/certifications.css';
+@import './styles/contact.css';
+@import './styles/footer.css';
+
+@import './styles/work-detail.css';
+
+@import './styles/responsive.css';

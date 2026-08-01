@@ -1,0 +1,102 @@
+/* ===========================
+   リセット
+   すべての要素のデフォルト余白をゼロにする
+   box-sizing: border-box でpadding・borderをwidth/heightに含める
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   CSS変数（ダークテーマ・デフォルト）
+   :root に定義した変数はページ全体で使える
+   =========================== */
+:root {
+  --color-bg: #0b0f1a;         /* ページ背景色（ダークネイビー） */
+  --color-surface: #131a2b;    /* カード・セクションの背景色 */
+  --color-surface-2: #1b2438;  /* カード内の入れ子要素などの背景色 */
+  --color-border: #28324a;     /* ボーダー・区切り線の色 */
+  --color-accent: #fbbf24;     /* メインアクセントカラー（ブランドアンバー） */
+  --color-accent-2: #f0932f;   /* サブアクセントカラー（狐色寄りの濃アンバー） */
+  --color-accent-contrast: #0b0f1a; /* アクセント面（ボタン等）に載せる文字色 */
+  --color-text: #f5f7fa;       /* 本文テキストの色 */
+  --color-text-muted: #9aa5b8; /* 補足テキスト・ラベルなど薄い文字色 */
+  /* バッジ用トークン（資格ステータス・スキルレベルで共用）
+     ライトテーマでは白背景でも読める濃色に上書きされる */
+  --badge-amber: #fbbf24;
+  --badge-orange: #f0932f;
+  --badge-sky: #38bdf8;
+  --badge-indigo: #818cf8;
+  --font-en: 'Space Grotesk', sans-serif; /* 英字フォント */
+  --font-ja: 'Noto Sans JP', sans-serif;  /* 日本語フォント */
+  --radius: 12px;              /* カードなどの角丸の大きさ */
+  --transition: 0.3s ease;     /* ホバーアニメーションの速さ */
+}
+
+/* ===========================
+   CSS変数（ライトテーマ）
+   data-theme="light" が <html> に付いたとき上書きされる
+   =========================== */
+[data-theme="light"] {
+  --color-bg: #f8f9fc;
+  --color-surface: #ffffff;
+  --color-surface-2: #eceff5;
+  --color-border: #e2e5ec;
+  /* 明るいアンバーは白背景上でコントラスト不足のため、
+     テキスト・アイコン用途に耐える濃色アンバーへ切り替える */
+  --color-accent: #b45309;
+  --color-accent-2: #c2410c;
+  --color-accent-contrast: #ffffff;
+  --color-text: #12182b;
+  --color-text-muted: #5b6478;
+  --badge-amber: #b45309;
+  --badge-orange: #c2410c;
+  --badge-sky: #0369a1;
+  --badge-indigo: #4338ca;
+}
+
+/* ライトテーマ時のヘッダー背景（半透明白） */
+[data-theme="light"] .header {
+  background: rgba(248, 249, 252, 0.88);
+}
+
+/* ===========================
+   html
+   =========================== */
+html {
+  scroll-behavior: smooth; /* アンカーリンクをなめらかにスクロールする */
+}
+
+/* ===========================
+   body（ページ全体の基本スタイル）
+   =========================== */
+body {
+  background-color: var(--color-bg);   /* 背景色をCSS変数から取得 */
+  color: var(--color-text);            /* 文字色をCSS変数から取得 */
+  font-family: var(--font-ja);         /* フォントをCSS変数から取得 */
+  line-height: 1.7;                    /* 行間を広めに取り読みやすくする */
+  -webkit-font-smoothing: antialiased; /* macOSでフォントをなめらかに描画する */
+}
+
+/* ===========================
+   リンク
+   =========================== */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ===========================
+   画像
+   =========================== */
+img {
+  max-width: 100%; /* 親要素からはみ出さないようにする */
+  display: block;  /* inline要素のデフォルトの下余白をなくす */
+}
